@@ -1,0 +1,154 @@
+
+.card{
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
+    cursor:pointer;
+    height: 350px;
+    width: 250px;
+    overflow: visible !important;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    transition: all 1000ms ease;
+}
+
+.card:hover{
+    transform: rotateY(180deg);
+}
+
+.card-header{
+    text-align: center;
+    font-weight: 2000;
+    border-radius: 15px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.card-footer{
+    text-align: center;
+    border-radius: 15px;
+}
+
+.center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+
+
+.text{
+    color: black;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+
+/* El 0.0 hace que el fondo de la lista de habilidades sea opaco */
+.list-group-item{
+    background-color: rgba(255, 0, 0, 0.0);
+}
+
+hr, .hrcolor {
+    margin:0;
+    height: 1px;
+    border: 0;
+    color: black;
+    background-color: black;
+ }
+
+ .container{
+     margin-top: 50px;
+     margin-left: 0 !important;
+ }
+
+ 
+
+.front{
+    height: 350px;
+    width: 250px;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.back{
+    height: 350px;
+    width: 250px;
+    position: absolute;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+}
+
+
+
+
+
+
+.badge-normal{
+    background-color: rgb(167, 159, 159);
+    color: white;
+}
+.badge-grass{
+    background-color: rgb(56, 209, 56);
+    color: white;
+}
+.badge-fire{
+    background-color: rgb(236, 128, 4);
+    color: white;
+}
+.badge-water{
+    background-color: rgb(101, 101, 221);
+    color: white;
+}
+.badge-fighting{
+    background-color: brown;
+    color: white;
+}
+.badge-flying{
+    background-color: rgb(122, 122, 209);
+    color: white;
+}
+.badge-poison{
+    background-color: rgb(139, 11, 139);
+    color: white;
+}
+.badge-ground{
+    background-color: greenyellow;
+}
+.badge-rock{
+    background-color: grey;
+    color: white;
+}
+.badge-bug{
+    background-color: rgb(16, 148, 16);
+    color: white;
+    
+}
+.badge-ghost{
+    background-color: rgb(201, 84, 201);
+    color: white;
+}
+.badge-electric{
+    background-color: yellow;
+}
+.badge-psychic{
+    background-color: rgb(255, 136, 156);
+    color: white;
+}
+.badge-ice{
+    background-color: rgb(182, 182, 243);
+}
+.badge-dragon{
+    background-color: rgb(147, 77, 228);
+    color: white;
+}
+.badge-dark{
+    background-color: rgb(23, 56, 17);
+    color: white;
+}
+.badge-steel{
+    background-color: steelblue;
+    color: white;
+}
+.badge-fairy{
+    background-color: rgb(241, 182, 243);
+}

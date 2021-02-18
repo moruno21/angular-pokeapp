@@ -1,0 +1,141 @@
+
+<app-loading class="m-5" *ngIf="loading"></app-loading>
+
+
+<div *ngIf="!loading">
+            
+    <div class="row animated fadeIn fast" >
+        
+        <div class="col-md-4">
+            <div class="card text-dark bg-light m-5" >
+
+
+                <div class="front">
+                    <div class="card-header">{{pokemon.id}}- {{name | uppercase}}</div>
+                    <div class="card-body">
+                        <img [src]="imagefront" class="card-img-top" alt="">
+                    </div>
+                    <div class="card-footer">
+                        <span *ngFor="let type of types">
+                            <span [ngSwitch]="type.type.name">
+                                <div *ngSwitchCase="'normal'"   class="badge badge-pill badge-normal">  {{type.type.name | uppercase}}</div>
+                                <div *ngSwitchCase="'grass'"    class="badge badge-pill badge-grass">   {{type.type.name | uppercase}}</div>
+                                <div *ngSwitchCase="'fire'"     class="badge badge-pill badge-fire">    {{type.type.name | uppercase}}</div>
+                                <div *ngSwitchCase="'water'"    class="badge badge-pill badge-water">   {{type.type.name | uppercase}}</div>
+                                <div *ngSwitchCase="'fighting'" class="badge badge-pill badge-fighting">{{type.type.name | uppercase}}</div>
+                                <div *ngSwitchCase="'flying'"   class="badge badge-pill badge-flying">  {{type.type.name | uppercase}}</div>
+                                <div *ngSwitchCase="'poison'"   class="badge badge-pill badge-poison">  {{type.type.name | uppercase}}</div>
+                                <div *ngSwitchCase="'ground'"   class="badge badge-pill badge-ground">  {{type.type.name | uppercase}}</div>
+                                <div *ngSwitchCase="'rock'"     class="badge badge-pill badge-rock">    {{type.type.name | uppercase}}</div>
+                                <div *ngSwitchCase="'bug'"      class="badge badge-pill badge-bug">     {{type.type.name | uppercase}}</div>
+                                <div *ngSwitchCase="'ghost'"    class="badge badge-pill badge-ghost">   {{type.type.name | uppercase}}</div>
+                                <div *ngSwitchCase="'electric'" class="badge badge-pill badge-electric">{{type.type.name | uppercase}}</div>
+                                <div *ngSwitchCase="'psychic'"  class="badge badge-pill badge-psychic"> {{type.type.name | uppercase}}</div>
+                                <div *ngSwitchCase="'ice'"      class="badge badge-pill badge-ice">     {{type.type.name | uppercase}}</div>
+                                <div *ngSwitchCase="'dragon'"   class="badge badge-pill badge-dragon">  {{type.type.name | uppercase}}</div>
+                                <div *ngSwitchCase="'dark'"     class="badge badge-pill badge-dark">    {{type.type.name | uppercase}}</div>
+                                <div *ngSwitchCase="'steel'"    class="badge badge-pill badge-steel">   {{type.type.name | uppercase}}</div>
+                                <div *ngSwitchCase="'fairy'"    class="badge badge-pill badge-fairy">   {{type.type.name | uppercase}}</div>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="back">
+                    <div class="card-header">{{pokemon.id}}- {{name | uppercase}}</div>
+                    <div class="card-body">
+                        <img [src]="imageback" class="card-img-top" alt="">
+                    </div>
+                    <div class="card-footer">
+                        <span *ngFor="let type of types">
+                            <span [ngSwitch]="type.type.name">
+                                <div *ngSwitchCase="'normal'"   class="badge badge-pill badge-normal">  {{type.type.name | uppercase}}</div>
+                                <div *ngSwitchCase="'grass'"    class="badge badge-pill badge-grass">   {{type.type.name | uppercase}}</div>
+                                <div *ngSwitchCase="'fire'"     class="badge badge-pill badge-fire">    {{type.type.name | uppercase}}</div>
+                                <div *ngSwitchCase="'water'"    class="badge badge-pill badge-water">   {{type.type.name | uppercase}}</div>
+                                <div *ngSwitchCase="'fighting'" class="badge badge-pill badge-fighting">{{type.type.name | uppercase}}</div>
+                                <div *ngSwitchCase="'flying'"   class="badge badge-pill badge-flying">  {{type.type.name | uppercase}}</div>
+                                <div *ngSwitchCase="'poison'"   class="badge badge-pill badge-poison">  {{type.type.name | uppercase}}</div>
+                                <div *ngSwitchCase="'ground'"   class="badge badge-pill badge-ground">  {{type.type.name | uppercase}}</div>
+                                <div *ngSwitchCase="'rock'"     class="badge badge-pill badge-rock">    {{type.type.name | uppercase}}</div>
+                                <div *ngSwitchCase="'bug'"      class="badge badge-pill badge-bug">     {{type.type.name | uppercase}}</div>
+                                <div *ngSwitchCase="'ghost'"    class="badge badge-pill badge-ghost">   {{type.type.name | uppercase}}</div>
+                                <div *ngSwitchCase="'electric'" class="badge badge-pill badge-electric">{{type.type.name | uppercase}}</div>
+                                <div *ngSwitchCase="'psychic'"  class="badge badge-pill badge-psychic"> {{type.type.name | uppercase}}</div>
+                                <div *ngSwitchCase="'ice'"      class="badge badge-pill badge-ice">     {{type.type.name | uppercase}}</div>
+                                <div *ngSwitchCase="'dragon'"   class="badge badge-pill badge-dragon">  {{type.type.name | uppercase}}</div>
+                                <div *ngSwitchCase="'dark'"     class="badge badge-pill badge-dark">    {{type.type.name | uppercase}}</div>
+                                <div *ngSwitchCase="'steel'"    class="badge badge-pill badge-steel">   {{type.type.name | uppercase}}</div>
+                                <div *ngSwitchCase="'fairy'"    class="badge badge-pill badge-fairy">   {{type.type.name | uppercase}}</div>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+        
+            </div>
+            <div [routerLink]="['/home']" class="btn btn-danger m-5 center"> Go back </div>
+        </div>
+        
+
+
+        <div class="col-md-8 text">
+            <br>
+            <h3 class="text"> {{name | uppercase}}</h3>
+            <hr>
+            <div class="row">
+                <div class="col-md-4">
+                    <h4 class="container">Habilities</h4>
+                    <hr>
+                    <ul class="list-group list-group-flush">
+                        <li *ngFor="let ability of abilities" class="list-group-item">
+                            - {{ability.ability.name  | uppercase}}
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-8">
+                    <h4 class="container">Location Areas</h4>
+                    <hr>
+                    <ul class="list-group list-group-flush">
+                        <li *ngFor="let city of area" class="list-group-item">
+                            - {{city  | uppercase | espacioGuion}}
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+        
+        </div>
+    </div>
+
+
+</div>
+
+<!-- 
+    <div class="row m-5">
+        <div class="col">
+        <table class="table">
+            <thead>
+                <tr class="white">
+                    <th>Foto</th>
+                    <th>Album</th>
+                    <th>Cancion</th>
+                    <th>Vista previa</th>
+                </tr>
+
+                <tbody>
+                    <tr *ngFor="" class="white">
+                        <td>
+                            <img [src]="" class="img-thumb">
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <audio [src]="" controls></audio>
+                            <iframe [src]="" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                        </td>
+                    </tr>
+                </tbody>
+        </table>
+    </div>
+</div> -->
