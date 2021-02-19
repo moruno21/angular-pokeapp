@@ -2,20 +2,11 @@
 
 .card {
 	border-radius: 15px;
-	overflow: hidden;
 	box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
 	cursor: pointer;
 	height: 350px;
 	width: 250px;
 	overflow: visible !important;
-	transform-style: preserve-3d;
-	-webkit-transform-style: preserve-3d;
-	transition: all 1000ms ease;
-}
-
-.card:hover {
-	transform: rotateY(180deg);
-	transition: all 1s ease;
 }
 
 .card-header {
@@ -30,20 +21,6 @@
 	border-radius: 15px;
 }
 
-.front {
-	height: 350px;
-	width: 250px;
-	position: absolute;
-	backface-visibility: hidden;
-}
-
-.back {
-	height: 350px;
-	width: 250px;
-	position: absolute;
-	backface-visibility: hidden;
-	transform: rotateY(180deg);
-}
 .center {
 	display: flex;
 	align-items: center;
@@ -147,4 +124,14 @@ hr,
 }
 .badge-fairy {
 	background-color: rgb(241, 182, 243);
+}
+
+.badge-big {
+	width: 150px;
+	height: 40px;
+	font-size: 17px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
 }
