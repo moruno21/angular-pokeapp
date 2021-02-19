@@ -51,7 +51,10 @@ export class PokemonComponent implements OnInit {
   getPokemonArea(id : number){
     this.pokemonService.getPokemonArea(id).subscribe( (data: any) =>{
       for(let i=0; i<data.length; i++){
-        this.area.push(data[i].location_area.name);
+        if(i>=10){}
+        else{
+          this.area.push(data[i].location_area.name);
+        }
       }
       console.log(this.area);
     })
