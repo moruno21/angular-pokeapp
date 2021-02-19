@@ -62,7 +62,7 @@
 		<div class="col-md-8 text">
 			<div class="row">
 				<div class="col-md-4">
-					<h4 class="container">
+					<h4 class="container center">
 						<span [ngSwitch]="pokemon.types[0].type.name">
 							<div *ngSwitchCase="'normal'" class="badge badge-pill badge-normal">Abilities</div>
 							<div *ngSwitchCase="'grass'" class="badge badge-pill badge-grass">Abilities</div>
@@ -84,8 +84,8 @@
 							<div *ngSwitchCase="'fairy'" class="badge badge-pill badge-fairy">Abilities</div>
 						</span>
 					</h4>
-					<ul class="list-group list-group-flush">
-						<li *ngFor="let ability of abilities" class="list-group-item">- {{ ability.ability.name | uppercase }}</li>
+					<ul class="list-group list-group-flush center">
+						<li *ngFor="let ability of abilities" class="list-group-item">{{ ability.ability.name | uppercase }}</li>
 					</ul>
 				</div>
 
