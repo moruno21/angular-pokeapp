@@ -15,16 +15,7 @@ import { UppercasePipe } from "./pipes/uppercase.pipe";
 import { EspacioGuionPipe } from "./pipes/espacio-guion.pipe";
 
 @NgModule({
-	declarations: [
-		AppComponent,
-		HomeComponent,
-		NavbarComponent,
-		PokemonComponent,
-		FilterPipe,
-		LoadingComponent,
-		UppercasePipe,
-		EspacioGuionPipe,
-	],
+	declarations: [AppComponent, HomeComponent, NavbarComponent, PokemonComponent, FilterPipe, LoadingComponent, UppercasePipe, EspacioGuionPipe],
 	imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
 	providers: [],
 	bootstrap: [AppComponent],
