@@ -1,3 +1,5 @@
+/* Propiedades carta */
+
 .card {
 	border-radius: 15px;
 	overflow: hidden;
@@ -13,6 +15,7 @@
 
 .card:hover {
 	transform: rotateY(180deg);
+	transition: all 1s ease;
 }
 
 .card-header {
@@ -27,6 +30,20 @@
 	border-radius: 15px;
 }
 
+.front {
+	height: 350px;
+	width: 250px;
+	position: absolute;
+	backface-visibility: hidden;
+}
+
+.back {
+	height: 350px;
+	width: 250px;
+	position: absolute;
+	backface-visibility: hidden;
+	transform: rotateY(180deg);
+}
 .center {
 	display: flex;
 	align-items: center;
@@ -58,19 +75,9 @@ hr,
 	margin-left: 0 !important;
 }
 
-.front {
-	height: 350px;
-	width: 250px;
-	position: absolute;
-	backface-visibility: hidden;
-}
-
-.back {
-	height: 350px;
-	width: 250px;
-	position: absolute;
-	backface-visibility: hidden;
-	transform: rotateY(180deg);
+.btn:hover {
+	transform: scale(1.1);
+	transition: all 1s ease;
 }
 
 .badge-normal {
