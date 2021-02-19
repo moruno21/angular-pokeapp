@@ -3,7 +3,7 @@
 <div *ngIf="!loading">
 	<div class="row animated fadeIn fast center">
 		<div class="row-col-8">
-			<div class="card text-dark bg-light">
+			<div class="card text-dark m-5 bg-light">
 				<div class="front">
 					<div class="card-header">{{ pokemon.id }}- {{ name | uppercase }}</div>
 					<div class="card-body">
@@ -147,7 +147,7 @@
 			<hr />
 			<div class="row">
 				<div class="col-md-4">
-					<h4 class="container">Habilities</h4>
+					<h4 class="container">Abilities</h4>
 					<hr />
 					<ul class="list-group list-group-flush">
 						<li *ngFor="let ability of abilities" class="list-group-item">- {{ ability.ability.name | uppercase }}</li>
