@@ -10,21 +10,18 @@ import { PokemonService } from "src/app/services/pokemon.service";
 export class PokemonComponent implements OnInit {
 	ngOnInit(): void {}
 
-	pokemon: any;
-	imagefront: any;
-	imageback: any;
-	name: any;
-	types: any;
-	abilities: any;
+	pokemon: any; // This stores the pokemon with all its atributes
+	imagefront: any; // This stores the front image
+	imageback: any; // This stores the back image
+	name: any; // This stores the name of the pokemon
+	types: any; // This stores the type (or types) of the pokemon
+	abilities: any; // This stores the abilities of the pokemon
 
 	loading: any;
 
 	area: any[] = [];
 
-	constructor(
-		private router: ActivatedRoute,
-		private pokemonService: PokemonService
-	) {
+	constructor(private router: ActivatedRoute, private pokemonService: PokemonService) {
 		this.router.params.subscribe((params) => {
 			this.loading = true;
 			this.getPokemon(params["id"]);
