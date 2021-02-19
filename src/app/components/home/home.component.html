@@ -6,7 +6,7 @@
 <app-loading class="m-5" *ngIf="loading"></app-loading>
 
 
-<div class="row row-cols-md-4 animated fadeIn" *ngIf="!loading">
+<div class="row row-col-8 animated fadeIn" *ngIf="!loading">
     <div (click)="verPokemon(pokemon)" *ngFor="let pokemon of pokemons | filter:filterPokemon" > <!-- El pipe recibe como value todos los pokemons -->
         <div class="card text-dark bg-light m-5" [routerLink]="['/pokemon']" routerLinkActive="router-link-active" >
             <div class="card-header">{{pokemon.name | uppercase}}</div>
