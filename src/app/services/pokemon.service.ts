@@ -1,28 +1,25 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Injectable } from "@angular/core";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 
-import { map } from 'rxjs/operators';
+import { map } from "rxjs/operators";
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: "root",
 })
 export class PokemonService {
+	constructor(private http: HttpClient) {}
 
-  constructor( private http: HttpClient) { }
+	baseUrl = "https://pokeapi.co/api/v2";
 
-  baseUrl = 'https://pokeapi.co/api/v2';
+	getPokemons() {
+		return this.http.get(`${this.baseUrl}/pokemon/`);
+	}
 
-  getPokemons(){
-    return this.http.get(`${this.baseUrl}/pokemon/`);
-  }
-  
-  
-  getPokemon(index: number){
-    return this.http.get(`${this.baseUrl}/pokemon/${index}`)
-  }
+	getPokemon(index: number) {
+		return this.http.get(`${this.baseUrl}/pokemon/${index}`);
+	}
 
-  getPokemonArea(index: number){
-    return this.http.get(`${this.baseUrl}/pokemon/${index}/encounters`);
-  }
-
+	getPokemonArea(index: number) {
+		return this.http.get(`${this.baseUrl}/pokemon/${index}/encounters`);
+	}
 }
