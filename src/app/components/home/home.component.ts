@@ -21,9 +21,9 @@ export class HomeComponent {
 	constructor(private pokemonService: PokemonService, private router: Router) {
 		this.loading = true;
 		this.getPokemonsBucle();
-		// setTimeout(() => {
-		this.loading = false;
-		// }, 1000);
+		setTimeout(() => {
+			this.loading = false;
+		}, 1000);
 	}
 
 	getPokemonsBucle() {
