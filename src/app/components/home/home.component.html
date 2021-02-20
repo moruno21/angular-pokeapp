@@ -1,6 +1,6 @@
 <app-loading class="m-5" *ngIf="loading"></app-loading>
 
-<div class="container">
+<div class="container" *ngIf="!loading">
 	<div class="row animated fadeIn">
 		<input #termino type="text" class="form-control m-5" name="filterPokemon" placeholder="🔎 Search pokemon" [(ngModel)]="filterPokemon" />
 	</div>
