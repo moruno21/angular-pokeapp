@@ -14,9 +14,11 @@ import { LoadingComponent } from "./components/shared/loading/loading.component"
 import { UppercasePipe } from "./pipes/uppercase.pipe";
 import { EspacioGuionPipe } from "./pipes/espacio-guion.pipe";
 
+import { NgxPaginationModule } from "ngx-pagination";
+
 @NgModule({
 	declarations: [AppComponent, HomeComponent, NavbarComponent, PokemonComponent, FilterPipe, LoadingComponent, UppercasePipe, EspacioGuionPipe],
-	imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
+	imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, NgxPaginationModule],
 	providers: [],
 	bootstrap: [AppComponent],
 })

@@ -8,9 +8,13 @@ import { Router } from "@angular/router";
 	styleUrls: ["./home.component.css"],
 })
 export class HomeComponent {
+	page: number = 1;
+
 	loading: boolean = true;
 
 	pokemons: any[] = [];
+
+	totalPokemons: number = 0;
 
 	filterPokemon: any = "";
 
@@ -24,14 +28,11 @@ export class HomeComponent {
 
 	getPokemonsBucle() {
 		let listaDePokemons: any[] = [];
-		for (let i = 1; i < 150; i++) {
-			//Hay que hacer este if ya que el pokemon con id 288 no esta bien en la
-			if (i === 127) {
-			} else {
-				this.pokemonService.getPokemon(i).subscribe((resp: any) => {
-					listaDePokemons.push(resp);
-				});
-			}
+		for (let i = 1; i <= 151; i++) {
+			this.pokemonService.getPokemon(i).subscribe((resp: any) => {
+				listaDePokemons.push(resp);
+			});
+			this.totalPokemons++;
 		}
 		this.pokemons = listaDePokemons;
 	}

@@ -16,6 +16,8 @@ export class PokemonComponent implements OnInit {
 	name: any; // This stores the name of the pokemon
 	types: any; // This stores the type (or types) of the pokemon
 	abilities: any; // This stores the abilities of the pokemon
+	mainType: any; //This stores the first type of the pokemon
+	id: any; //This stores the id of the pokemon
 
 	loading: any;
 
@@ -40,7 +42,9 @@ export class PokemonComponent implements OnInit {
 			this.imagefront = pokemon.sprites.front_default;
 			this.imageback = pokemon.sprites.back_default;
 			this.types = pokemon.types;
+			this.mainType = pokemon.types[0].type.name;
 			this.abilities = pokemon.abilities;
+			this.id = pokemon.id;
 		});
 	}
 
@@ -52,7 +56,6 @@ export class PokemonComponent implements OnInit {
 					this.area.push(data[i].location_area.name);
 				}
 			}
-			console.log(this.area);
 		});
 	}
 }
