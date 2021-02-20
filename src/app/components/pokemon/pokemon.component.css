@@ -135,3 +135,12 @@ hr,
 	justify-content: center;
 	position: relative;
 }
+
+.pokemon-container {
+	background-color: rgb(221, 158, 158);
+	border-radius: 15px;
+}
+
+.dark-arrow {
+	color: black;
+}

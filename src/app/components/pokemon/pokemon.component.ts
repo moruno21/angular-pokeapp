@@ -26,9 +26,9 @@ export class PokemonComponent implements OnInit {
 			this.loading = true;
 			this.getPokemon(params["id"]);
 			this.getPokemonArea(params["id"]);
-			setTimeout(() => {
-				this.loading = false;
-			}, 1000);
+			// setTimeout(() => {
+			this.loading = false;
+			// }, 1000);
 		});
 	}
 
