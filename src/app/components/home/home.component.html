@@ -1,9 +1,9 @@
+<app-loading class="m-5" *ngIf="loading"></app-loading>
+
 <div class="container">
 	<div class="row animated fadeIn">
 		<input #termino type="text" class="form-control m-5" name="filterPokemon" placeholder="🔎 Search pokemon" [(ngModel)]="filterPokemon" />
 	</div>
-
-	<app-loading class="m-5" *ngIf="loading"></app-loading>
 
 	<div class="row row-col-8 animated fadeIn" *ngIf="!loading">
 		<div (click)="verPokemon(pokemon)" *ngFor="let pokemon of pokemons | filter: filterPokemon | paginate: { itemsPerPage: 24, currentPage: page, totalItems: totalPokemons }">
