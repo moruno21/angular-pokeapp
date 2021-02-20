@@ -1,150 +1,141 @@
-<div class="row animated fadeIn">
-	<input
-		#termino
-		type="text"
-		class="form-control"
-		name="filterPokemon"
-		placeholder="Search pokemon"
-		[(ngModel)]="filterPokemon"
-	/>
-</div>
+<div class="container">
+	<div class="row animated fadeIn">
+		<input #termino type="text" class="form-control m-5" name="filterPokemon" placeholder="🔎 Search pokemon" [(ngModel)]="filterPokemon" />
+	</div>
 
-<app-loading class="m-5" *ngIf="loading"></app-loading>
+	<app-loading class="m-5" *ngIf="loading"></app-loading>
 
-<div class="row row-col-8 animated fadeIn" *ngIf="!loading">
-	<div (click)="verPokemon(pokemon)" *ngFor="let pokemon of pokemons | filter: filterPokemon">
-		<!-- El pipe recibe como value todos los pokemons -->
-		<div
-			class="card text-dark bg-light m-5"
-			[routerLink]="['/pokemon']"
-			routerLinkActive="router-link-active"
-		>
-			<div class="card-header center">
-				<span [ngSwitch]="pokemon.types[0].type.name">
-					<div *ngSwitchCase="'normal'" class="badge badge-big badge-pill badge-normal">
-						{{ pokemon.name | uppercase }}
-					</div>
-					<div *ngSwitchCase="'grass'" class="badge badge-big badge-pill badge-grass">
-						{{ pokemon.name | uppercase }}
-					</div>
-					<div *ngSwitchCase="'fire'" class="badge badge-big badge-pill badge-fire">
-						{{ pokemon.name | uppercase }}
-					</div>
-					<div *ngSwitchCase="'water'; bug" class="badge badge-big badge-pill badge-water">
-						{{ pokemon.name | uppercase }}
-					</div>
-					<div *ngSwitchCase="'fighting'" class="badge badge-big badge-pill badge-fighting">
-						{{ pokemon.name | uppercase }}
-					</div>
-					<div *ngSwitchCase="'flying'" class="badge badge-big badge-pill badge-flying">
-						{{ pokemon.name | uppercase }}
-					</div>
-					<div *ngSwitchCase="'poison'" class="badge badge-big badge-pill badge-poison">
-						{{ pokemon.name | uppercase }}
-					</div>
-					<div *ngSwitchCase="'ground'" class="badge badge-big badge-pill badge-ground">
-						{{ pokemon.name | uppercase }}
-					</div>
-					<div *ngSwitchCase="'rock'" class="badge badge-big badge-pill badge-rock">
-						{{ pokemon.name | uppercase }}
-					</div>
-					<div *ngSwitchCase="'bug'" class="badge badge-big badge-pill badge-bug">
-						{{ pokemon.name | uppercase }}
-					</div>
-					<div *ngSwitchCase="'ghost'" class="badge badge-big badge-pill badge-ghost">
-						{{ pokemon.name | uppercase }}
-					</div>
-					<div *ngSwitchCase="'electric'" class="badge badge-big badge-pill badge-electric">
-						{{ pokemon.name | uppercase }}
-					</div>
-					<div *ngSwitchCase="'psychic'" class="badge badge-big badge-pill badge-psychic">
-						{{ pokemon.name | uppercase }}
-					</div>
-					<div *ngSwitchCase="'ice'" class="badge badge-big badge-pill badge-ice">
-						{{ pokemon.name | uppercase }}
-					</div>
-					<div *ngSwitchCase="'dragon'" class="badge badge-big badge-pill badge-dragon">
-						{{ pokemon.name | uppercase }}
-					</div>
-					<div *ngSwitchCase="'dark'" class="badge badge-big badge-pill badge-dark">
-						{{ pokemon.name | uppercase }}
-					</div>
-					<div *ngSwitchCase="'steel'" class="badge badge-big badge-pill badge-steel">
-						{{ pokemon.name | uppercase }}
-					</div>
-					<div *ngSwitchCase="'fairy'" class="badge badge-big badge-pill badge-fairy">
-						{{ pokemon.name | uppercase }}
-					</div>
-					<div *ngSwitchDefault class="badge badge-big badge-pill badge-success">
-						{{ pokemon.name | uppercase }}
-					</div>
-				</span>
-			</div>
-			<div class="card-body">
-				<img [src]="pokemon.sprites.front_default" class="card-img-top" alt="" />
-			</div>
-			<div class="card-footer">
-				<span *ngFor="let type of pokemon.types">
-					<span [ngSwitch]="type.type.name">
-						<div *ngSwitchCase="'normal'" class="badge badge-pill badge-normal">
-							{{ type.type.name | uppercase }}
+	<div class="row row-col-8 animated fadeIn" *ngIf="!loading">
+		<div (click)="verPokemon(pokemon)" *ngFor="let pokemon of pokemons | filter: filterPokemon">
+			<!-- El pipe recibe como value todos los pokemons -->
+			<div class="card text-dark bg-light m-5" [routerLink]="['/pokemon']" routerLinkActive="router-link-active">
+				<div class="card-header center">
+					<span [ngSwitch]="pokemon.types[0].type.name">
+						<div *ngSwitchCase="'normal'" class="badge badge-big badge-pill badge-normal">
+							{{ pokemon.name | uppercase }}
 						</div>
-						<div *ngSwitchCase="'grass'" class="badge badge-pill badge-grass">
-							{{ type.type.name | uppercase }}
+						<div *ngSwitchCase="'grass'" class="badge badge-big badge-pill badge-grass">
+							{{ pokemon.name | uppercase }}
 						</div>
-						<div *ngSwitchCase="'fire'" class="badge badge-pill badge-fire">
-							{{ type.type.name | uppercase }}
+						<div *ngSwitchCase="'fire'" class="badge badge-big badge-pill badge-fire">
+							{{ pokemon.name | uppercase }}
 						</div>
-						<div *ngSwitchCase="'water'; bug" class="badge badge-pill badge-water">
-							{{ type.type.name | uppercase }}
+						<div *ngSwitchCase="'water'; bug" class="badge badge-big badge-pill badge-water">
+							{{ pokemon.name | uppercase }}
 						</div>
-						<div *ngSwitchCase="'fighting'" class="badge badge-pill badge-fighting">
-							{{ type.type.name | uppercase }}
+						<div *ngSwitchCase="'fighting'" class="badge badge-big badge-pill badge-fighting">
+							{{ pokemon.name | uppercase }}
 						</div>
-						<div *ngSwitchCase="'flying'" class="badge badge-pill badge-flying">
-							{{ type.type.name | uppercase }}
+						<div *ngSwitchCase="'flying'" class="badge badge-big badge-pill badge-flying">
+							{{ pokemon.name | uppercase }}
 						</div>
-						<div *ngSwitchCase="'poison'" class="badge badge-pill badge-poison">
-							{{ type.type.name | uppercase }}
+						<div *ngSwitchCase="'poison'" class="badge badge-big badge-pill badge-poison">
+							{{ pokemon.name | uppercase }}
 						</div>
-						<div *ngSwitchCase="'ground'" class="badge badge-pill badge-ground">
-							{{ type.type.name | uppercase }}
+						<div *ngSwitchCase="'ground'" class="badge badge-big badge-pill badge-ground">
+							{{ pokemon.name | uppercase }}
 						</div>
-						<div *ngSwitchCase="'rock'" class="badge badge-pill badge-rock">
-							{{ type.type.name | uppercase }}
+						<div *ngSwitchCase="'rock'" class="badge badge-big badge-pill badge-rock">
+							{{ pokemon.name | uppercase }}
 						</div>
-						<div *ngSwitchCase="'bug'" class="badge badge-pill badge-bug">
-							{{ type.type.name | uppercase }}
+						<div *ngSwitchCase="'bug'" class="badge badge-big badge-pill badge-bug">
+							{{ pokemon.name | uppercase }}
 						</div>
-						<div *ngSwitchCase="'ghost'" class="badge badge-pill badge-ghost">
-							{{ type.type.name | uppercase }}
+						<div *ngSwitchCase="'ghost'" class="badge badge-big badge-pill badge-ghost">
+							{{ pokemon.name | uppercase }}
 						</div>
-						<div *ngSwitchCase="'electric'" class="badge badge-pill badge-electric">
-							{{ type.type.name | uppercase }}
+						<div *ngSwitchCase="'electric'" class="badge badge-big badge-pill badge-electric">
+							{{ pokemon.name | uppercase }}
 						</div>
-						<div *ngSwitchCase="'psychic'" class="badge badge-pill badge-psychic">
-							{{ type.type.name | uppercase }}
+						<div *ngSwitchCase="'psychic'" class="badge badge-big badge-pill badge-psychic">
+							{{ pokemon.name | uppercase }}
 						</div>
-						<div *ngSwitchCase="'ice'" class="badge badge-pill badge-ice">
-							{{ type.type.name | uppercase }}
+						<div *ngSwitchCase="'ice'" class="badge badge-big badge-pill badge-ice">
+							{{ pokemon.name | uppercase }}
 						</div>
-						<div *ngSwitchCase="'dragon'" class="badge badge-pill badge-dragon">
-							{{ type.type.name | uppercase }}
+						<div *ngSwitchCase="'dragon'" class="badge badge-big badge-pill badge-dragon">
+							{{ pokemon.name | uppercase }}
 						</div>
-						<div *ngSwitchCase="'dark'" class="badge badge-pill badge-dark">
-							{{ type.type.name | uppercase }}
+						<div *ngSwitchCase="'dark'" class="badge badge-big badge-pill badge-dark">
+							{{ pokemon.name | uppercase }}
 						</div>
-						<div *ngSwitchCase="'steel'" class="badge badge-pill badge-steel">
-							{{ type.type.name | uppercase }}
+						<div *ngSwitchCase="'steel'" class="badge badge-big badge-pill badge-steel">
+							{{ pokemon.name | uppercase }}
 						</div>
-						<div *ngSwitchCase="'fairy'" class="badge badge-pill badge-fairy">
-							{{ type.type.name | uppercase }}
+						<div *ngSwitchCase="'fairy'" class="badge badge-big badge-pill badge-fairy">
+							{{ pokemon.name | uppercase }}
 						</div>
-						<div *ngSwitchDefault class="badge badge-pill badge-success">
-							{{ type.type.name | uppercase }}
+						<div *ngSwitchDefault class="badge badge-big badge-pill badge-success">
+							{{ pokemon.name | uppercase }}
 						</div>
 					</span>
-				</span>
+				</div>
+				<div class="card-body">
+					<img [src]="pokemon.sprites.front_default" class="card-img-top" alt="" />
+				</div>
+				<div class="card-footer">
+					<span *ngFor="let type of pokemon.types">
+						<span [ngSwitch]="type.type.name">
+							<div *ngSwitchCase="'normal'" class="badge badge-pill badge-normal">
+								{{ type.type.name | uppercase }}
+							</div>
+							<div *ngSwitchCase="'grass'" class="badge badge-pill badge-grass">
+								{{ type.type.name | uppercase }}
+							</div>
+							<div *ngSwitchCase="'fire'" class="badge badge-pill badge-fire">
+								{{ type.type.name | uppercase }}
+							</div>
+							<div *ngSwitchCase="'water'; bug" class="badge badge-pill badge-water">
+								{{ type.type.name | uppercase }}
+							</div>
+							<div *ngSwitchCase="'fighting'" class="badge badge-pill badge-fighting">
+								{{ type.type.name | uppercase }}
+							</div>
+							<div *ngSwitchCase="'flying'" class="badge badge-pill badge-flying">
+								{{ type.type.name | uppercase }}
+							</div>
+							<div *ngSwitchCase="'poison'" class="badge badge-pill badge-poison">
+								{{ type.type.name | uppercase }}
+							</div>
+							<div *ngSwitchCase="'ground'" class="badge badge-pill badge-ground">
+								{{ type.type.name | uppercase }}
+							</div>
+							<div *ngSwitchCase="'rock'" class="badge badge-pill badge-rock">
+								{{ type.type.name | uppercase }}
+							</div>
+							<div *ngSwitchCase="'bug'" class="badge badge-pill badge-bug">
+								{{ type.type.name | uppercase }}
+							</div>
+							<div *ngSwitchCase="'ghost'" class="badge badge-pill badge-ghost">
+								{{ type.type.name | uppercase }}
+							</div>
+							<div *ngSwitchCase="'electric'" class="badge badge-pill badge-electric">
+								{{ type.type.name | uppercase }}
+							</div>
+							<div *ngSwitchCase="'psychic'" class="badge badge-pill badge-psychic">
+								{{ type.type.name | uppercase }}
+							</div>
+							<div *ngSwitchCase="'ice'" class="badge badge-pill badge-ice">
+								{{ type.type.name | uppercase }}
+							</div>
+							<div *ngSwitchCase="'dragon'" class="badge badge-pill badge-dragon">
+								{{ type.type.name | uppercase }}
+							</div>
+							<div *ngSwitchCase="'dark'" class="badge badge-pill badge-dark">
+								{{ type.type.name | uppercase }}
+							</div>
+							<div *ngSwitchCase="'steel'" class="badge badge-pill badge-steel">
+								{{ type.type.name | uppercase }}
+							</div>
+							<div *ngSwitchCase="'fairy'" class="badge badge-pill badge-fairy">
+								{{ type.type.name | uppercase }}
+							</div>
+							<div *ngSwitchDefault class="badge badge-pill badge-success">
+								{{ type.type.name | uppercase }}
+							</div>
+						</span>
+					</span>
+				</div>
 			</div>
 		</div>
 	</div>
