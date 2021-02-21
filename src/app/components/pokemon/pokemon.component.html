@@ -85,7 +85,38 @@
 							</span>
 						</h4>
 						<ul class="list-group list-group-flush center">
-							<li *ngFor="let ability of abilities" class="list-group-item">{{ ability.ability.name | uppercase }}</li>
+							<li *ngFor="let ability of abilities" class="list-group-item">
+								<b>{{ ability.ability.name | uppercase }}</b>
+							</li>
+						</ul>
+
+						<h4 class="container center">
+							<span [ngSwitch]="mainType">
+								<div *ngSwitchCase="'normal'" class="badge badge-pill badge-normal">Properties</div>
+								<div *ngSwitchCase="'grass'" class="badge badge-pill badge-grass">Properties</div>
+								<div *ngSwitchCase="'fire'" class="badge badge-pill badge-fire">Properties</div>
+								<div *ngSwitchCase="'water'" class="badge badge-pill badge-water">Properties</div>
+								<div *ngSwitchCase="'fighting'" class="badge badge-pill badge-fighting">Properties</div>
+								<div *ngSwitchCase="'flying'" class="badge badge-pill badge-flying">Properties</div>
+								<div *ngSwitchCase="'poison'" class="badge badge-pill badge-poison">Properties</div>
+								<div *ngSwitchCase="'ground'" class="badge badge-pill badge-ground">Properties</div>
+								<div *ngSwitchCase="'rock'" class="badge badge-pill badge-rock">Properties</div>
+								<div *ngSwitchCase="'bug'" class="badge badge-pill badge-bug">Properties</div>
+								<div *ngSwitchCase="'ghost'" class="badge badge-pill badge-ghost">Properties</div>
+								<div *ngSwitchCase="'electric'" class="badge badge-pill badge-electric">Properties</div>
+								<div *ngSwitchCase="'psychic'" class="badge badge-pill badge-psychic">Properties</div>
+								<div *ngSwitchCase="'ice'" class="badge badge-pill badge-ice">Properties</div>
+								<div *ngSwitchCase="'dragon'" class="badge badge-pill badge-dragon">Properties</div>
+								<div *ngSwitchCase="'dark'" class="badge badge-pill badge-dark">Properties</div>
+								<div *ngSwitchCase="'steel'" class="badge badge-pill badge-steel">Properties</div>
+								<div *ngSwitchCase="'fairy'" class="badge badge-pill badge-fairy">Properties</div>
+							</span>
+						</h4>
+						<ul class="list-group list-group-flush center">
+							<li class="list-group-item"><b>Height:</b> {{ pokemon.height }}</li>
+							<li class="list-group-item"><b>Weight:</b> {{ pokemon.weight }}</li>
+							<li class="list-group-item"><b>Health:</b> {{ pokemon.stats[0].base_stat }}</li>
+							<li class="list-group-item"><b>Atack:</b> {{ pokemon.stats[1].base_stat }}</li>
 						</ul>
 					</div>
 
