@@ -37,13 +37,6 @@ export class HomeComponent {
 		this.pokemons = listaDePokemons;
 	}
 
-	getPokemonsSinBucle() {
-		this.pokemonService.getPokemons().subscribe((resp: any) => {
-			this.pokemons.push(resp);
-			console.log(this.pokemons);
-		});
-	}
-
 	verPokemon(item: any) {
 		let pokemonId;
 		pokemonId = item.id;
