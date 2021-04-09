@@ -1,0 +1,7 @@
+.git
+.editorconfig
+/e2e
+/dosc
+.gitignore
+*.zip
+*.md
