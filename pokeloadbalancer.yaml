@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: pokeapp-loadbalancer
+  labels:
+    run: pokeapp
+spec:
+  type: LoadBalancer
+  ports:
+    - name: "80"
+      port: 80
+      targetPort: 80
+      protocol: TCP
+  selector:
+    app: pokeapp
