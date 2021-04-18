@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: pokeapp
+  name: pokeapp
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: pokeapp
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: pokeapp
+    spec:
+      containers:
+      - name: pokeapp
+        image: docker.io/jdes01/pokeimage
+        imagePullPolicy: IfNotPresent
+        resources: {}
+        ports:
+          - containerPort: 80 
+status: {}
