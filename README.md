@@ -10,9 +10,30 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Build (Angular local host)
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+
+## Build (Dockerized)
+
+Run `docker build -t pokeapp-image .` to generate our container's image.
+
+Run `docker run -d -it -p 8080:80/tcp --name pokeapp-prod pokeapp-image` to create our container.
+
+In case it shows an error for already having a container (running or not) using this image, Run:
+  `docker rm 'container-hash` and replace container hash with the appropriate one. 
+
+Browse localhost:8080
+
+## Deploy it in kubernetes (using minikube)
+
+Run `minikube start` to initialize it.
+
+Run `minikube dashboard` to browse minikube's web dashboard.
+
+Run `kubectl create -f pokemanifest.yaml` to initialize the deployment and the load balance service.
+
+Browse it!
 
 ## Running unit tests
 
