@@ -16,9 +16,10 @@ import { EspacioGuionPipe } from "./pipes/espacio-guion.pipe";
 
 import { NgxPaginationModule } from "ngx-pagination";
 import { SortPipe } from './pipes/sort.pipe';
+import { EasterEggComponent } from './components/easter-egg/easter-egg.component';
 
 @NgModule({
-	declarations: [AppComponent, HomeComponent, NavbarComponent, PokemonComponent, FilterPipe, LoadingComponent, UppercasePipe, EspacioGuionPipe, SortPipe],
+	declarations: [AppComponent, HomeComponent, NavbarComponent, PokemonComponent, FilterPipe, LoadingComponent, UppercasePipe, EspacioGuionPipe, SortPipe, EasterEggComponent],
 	imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, NgxPaginationModule],
 	providers: [],
 	bootstrap: [AppComponent],
